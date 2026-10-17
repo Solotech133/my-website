@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <form id="search-form" class="search" role="search">
+        <label for="city" class="visually-hidden">City name</label>
+        <input id="city" type="text" placeholder="Search for a city" autocomplete="off" required>
+        <button type="submit">Search</button>
+        <button type="button" id="locate" title="Use my location">Use my location</button>
+      </form>
+      <div class="controls">
+        <button id="unit-toggle" type="button" aria-label="Switch temperature unit">°C</button>
+        <button id="theme-toggle" type="button" aria-label="Switch light or dark theme">Dark</button>
+      </div>
+    </header>
+
+    <ul id="recent" class="recent" aria-label="Recent searches"></ul>
+
+    <p id="status" class="status" role="status" aria-live="polite">Search for a city to see its weather.</p>
+
+    <section id="weather" class="weather" hidden>
+      <div class="current">
+        <p id="place" class="place"></p>
+        <p class="temp"><span id="temp"></span></p>
+        <p id="condition" class="condition"></p>
+        <dl class="facts">
+          <div><dt>Feels like</dt><dd id="feels"></dd></div>
+          <div><dt>Humidity</dt><dd id="humidity"></dd></div>
+          <div><dt>Wind</dt><dd id="wind"></dd></div>
+        </dl>
+      </div>
+      <ol id="forecast" class="forecast" aria-label="5-day forecast"></ol>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
